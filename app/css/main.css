@@ -82,6 +82,7 @@ body {
 }
 @media screen and (max-width: 1000px) {
   .menu__list-link {
+    padding: 0;
     justify-content: center;
   }
 }
