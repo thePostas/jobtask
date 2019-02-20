@@ -1,0 +1,7 @@
+body {
+  background-color: #101114;
+}
+.payments {
+  display: flex;
+  max-width: 960px;
+}
