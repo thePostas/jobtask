@@ -10,8 +10,8 @@
     <title>Payments</title>
 </head>
 <body>
-    <section class="payments">
-        <!-- меню навигации -->
+    <section class="payments payments_centered">
+        <!--Меню навигации-->
         <nav class="menu payments__menu">
             <ul class="menu__list">
                 <li class="menu__list-item"><a href="#" class="menu__list-link">Личный кабинет</a></li>
@@ -22,7 +22,40 @@
             </ul>
         </nav>
         <!--Блок с реквизитами-->
-        <div class="payments-requisites">
+        <div class="requisites">
+            <article class="requisites__info">
+                <p class="requisites__info-element requisites__info-title">Информация по оплате:</p>
+                <p class="requisites__info-element requisites__info-number">Номер счета: <span class="requisites__info-data">87123658716587</span></p>
+                <p class="requisites__info-element requisites__info-sum">Сумма платежа: <span class="requisites__info-data">100 руб.</span></p>
+            </article>
+            <!--Данные карты-->
+            <div class="requisites__card">
+                <h3 class="requisites__card-title">Данные банковской карты</h3>
+                <form action="#post" class="requisites__card-form">
+                    <div class="requisites__card-form-side requisites__card-form-side-first">
+                        <label for="number-field-1" class="requisites__card-form-side-title">Номер карты</label>
+                        <div class="requisites__card-form-side-first-number">
+                            <input type="number" id="number-field-1" name="number-field-1" class="requisites__card-form-side-first-number-input">
+                            <input type="number" id="number-field-2" name="number-field-2" class="requisites__card-form-side-first-number-input">
+                            <input type="number" id="number-field-3" name="number-field-3" class="requisites__card-form-side-first-number-input">
+                            <input type="number" id="number-field-4" name="number-field-4" class="requisites__card-form-side-first-number-input">
+                        </div>
+                        <p class="requisites__card-form-side-title requisites__card-form-side-title_position">Срок действия</p>
+                        <div class="requisites__card-form-side-first-validity">
+                            <input type="number" id="month" name="month" min="01" max="12" class="requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-month">
+                            <input type="number" id="year" name="year" class="requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-year">
+                        </div>
+                        <input type="text" class="requisites__card-form-side-first-owner">
+                    </div>
+                    <div class="requisites__card-form-side requisites__card-form-side-second">
+                        <span class="requisites__card-form-side-second-line"></span>
+                        <div class="requisites__card-form-side-second-cvc">
+                            <p class="requisites__card-form-side-title">Код CVV2 / CVC2</p>
+                            <input type="number" id="cvc" name="cvc" class="requisites__card-form-side-second-cvc-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

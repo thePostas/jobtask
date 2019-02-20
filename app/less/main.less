@@ -3,7 +3,7 @@
   src: url(../fonts/open-sans-bold.ttf) format("truetype"); /* все современные браузеры */
 }
 
-ul, a, body{
+ul, a, p, body{
   padding: 0;
   margin: 0;
   list-style: none;
@@ -14,13 +14,18 @@ body {
   background-color: #101114;
 }
 
+@border-color: #e4e9ee;
+@card-text: #8494ab;
+
 //Главный блок страницы
 .payments {
   display: flex;
   justify-content: flex-end;
   max-width: 970px;
   min-width: 320px;
-  margin: 80px auto;
+  &_centered {
+    margin: 80px auto;
+  }
   @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
@@ -28,16 +33,140 @@ body {
   @media screen and (max-width: 720px) {
     margin: 10px;
   }
-  //Блок с реквизитами карты
-  &-requisites {
-    background-color: #fff;
-    width: 640px;
-    min-height: 570px;
-    @media screen and (max-width: 1000px) {
-      width: 90%;
+}
+
+//Блок с реквизитами карты
+.requisites {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 640px;
+  min-height: 568px;
+  padding: 45px 29px 0 29px;
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 720px) {
+    width: 100%;
+  }
+  //Информация о платеже
+  &__info {
+    display: flex;
+    flex-direction: column;
+    font: 16px Arial, sans-serif;
+    color: @card-text;
+    //Номер счета, сумма платежа
+    &-element {
+      display: flex;
+      width: 49%;
+      justify-content: space-between;
     }
-    @media screen and (max-width: 720px) {
-      width: 100%;
+    &-title {
+      margin-bottom: 21px;
+    }
+    &-number {
+      margin-bottom: 9px;
+
+    }
+    &-data {
+      min-width: 125px;
+      color: #373c43;
+    }
+  }
+  //Данные карты
+  &__card {
+    margin-top: 5px;
+    &-title {
+      font: 22px OpenSansBold, sans-serif;
+    }
+    //Форма с данными карты
+    &-form {
+      position: relative;
+      height: 350px;
+      color: @card-text;
+      //Карточки
+      &-side {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 234px;
+        border: 1px solid @border-color;
+        border-radius: 10px;
+        background-color: #f7f8f8;
+        padding-left: 15px;
+        //Сторона с номером карты
+        &-first {
+          z-index: 15;
+          position: relative;
+          //Полоса с номером карты
+          &-number {
+            display: flex;
+            justify-content: space-between;
+            width: 86%;
+            margin-top: 5px;
+            height: 42px;
+            &-input {
+              box-sizing: border-box;
+              padding: 0 5px;
+              width: 22.8%;
+              border: 1px solid @border-color;
+              font: 20px Arial,sans-serif;
+            }
+          }
+          //Срок действия карты
+          &-validity {
+            margin-top: 5px;
+            height: 42px;
+            display: flex;
+            &-input {
+              box-sizing: border-box;
+              padding: 0 5px;
+              border: 1px solid @border-color;
+              font: 20px Arial,sans-serif;
+            }
+            &-month {
+              width: 70px;
+              margin-right: 9px;
+            }
+            &-year {
+              width: 86px;
+            }
+          }
+          //Владелец карты
+          &-owner {
+            margin-top: 12px;
+            height: 38px;
+            width: 95%;
+            border: 1px solid @border-color;
+          }
+        }
+        &-title {
+          font: 16px Arial, sans-serif;
+          color: @card-text;
+          background-color: #f7f8f8;
+          margin-top: 21px;
+          &_position {
+            margin-top: 15px;
+          }
+        }
+        &-second {
+          z-index: 10;
+          position: absolute;
+          padding: 0;
+          top: 19px;
+          right: 17px;
+          //Серая полоса
+          &-line {
+            width: 100%;
+            height: 42px;
+            margin-top: 25px;
+            background-color: @border-color;
+          }
+        }
+
+      }
     }
   }
 }
@@ -69,6 +198,7 @@ body {
       width: 100%;
       height: 100%;
       padding-left: 28px;
+      padding-bottom: 2px;
       color: #fff;
       background-color: #191c24;
       border-top: 1px solid #20232b;
