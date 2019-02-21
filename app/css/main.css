@@ -227,17 +227,37 @@ input {
   display: flex;
 }
 .requisites__card-form-side-first-validity-input {
+  height: 100%;
   box-sizing: border-box;
-  padding: 0 5px;
+  padding: 4px 0 0 15px;
   border: 1px solid #e4e9ee;
   font: 20px Arial, sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .requisites__card-form-side-first-validity-month {
   width: 70px;
-  margin-right: 9px;
 }
 .requisites__card-form-side-first-validity-year {
   width: 86px;
+}
+.requisites__card-form-side-first-validity-container {
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 9px;
+}
+.requisites__card-form-side-first-validity-container:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 12px;
+  right: 12px;
+  border: 1px solid #c9d0d7;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
 }
 .requisites__card-form-side-first-owner {
   box-sizing: border-box;
@@ -318,6 +338,13 @@ input {
   border-radius: 50%;
   cursor: pointer;
 }
+@media screen and (max-width: 450px) {
+  .requisites__card-form-side-cvc-tip {
+    top: 47%;
+    right: 28px;
+    transform: scale(0.8);
+  }
+}
 .requisites__card-form-side-cvc-input {
   width: 98%;
   margin-left: 2%;
@@ -325,7 +352,7 @@ input {
   height: 38px;
   border: 1px solid #e4e9ee;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .requisites__card-form-side-cvc-input {
     width: 60%;
   }

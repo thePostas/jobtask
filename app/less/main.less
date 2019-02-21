@@ -190,17 +190,37 @@ input {
             height: 42px;
             display: flex;
             &-input {
+              height: 100%;
               box-sizing: border-box;
-              padding: 0 5px;
+              padding: 4px 0 0 15px;
               border: 1px solid @border-color;
               font: 20px Arial,sans-serif;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
             }
             &-month {
               width: 70px;
-              margin-right: 9px;
             }
             &-year {
               width: 86px;
+            }
+            &-container {
+              box-sizing: border-box;
+              position: relative;
+              margin-right: 9px;
+              &:before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 12px;
+                right: 12px;
+                border: 1px solid #c9d0d7;
+                border-left:none;
+                border-top:none;
+                transform: rotate(45deg);
+              }
             }
           }
           //Владелец карты
@@ -275,6 +295,11 @@ input {
             border: 1px solid #c7ced6;
             border-radius: 50%;
             cursor: pointer;
+            @media screen and (max-width: 450px) {
+              top: 47%;
+              right: 28px;
+              transform: scale(0.8);
+            }
           }
           &-input {
             width: 98%;
@@ -282,7 +307,7 @@ input {
             margin-top: 2px;
             height: 38px;
             border: 1px solid @border-color;
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: 450px) {
               width: 60%;
             }
           }
