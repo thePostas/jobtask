@@ -24,9 +24,6 @@ function clear() {
 }
 
 var form = document.getElementsByClassName('requisites__card-form')[0];
-var cardNumber = form.getElementsByClassName('requisites__card-form-side-first-number-input');
-var month = form.getElementsByClassName('requisites__card-form-side-first-validity-month')[0];
-var year = form.getElementsByClassName('requisites__card-form-side-first-validity-year')[0];
 var cvc = form.getElementsByClassName('requisites__card-form-side-cvc-input')[0];
 var allFormInputs = form.getElementsByClassName('requisites__card-form-input');
 
