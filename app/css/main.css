@@ -14,6 +14,7 @@ body {
 }
 body {
   background-color: #101114;
+  min-width: 320px;
 }
 input {
   font: 16px Arial, sans-serif;
@@ -23,7 +24,7 @@ input {
   display: flex;
   justify-content: flex-end;
   max-width: 970px;
-  min-width: 320px;
+  min-width: 300px;
 }
 .payments_centered {
   margin: 80px auto;
@@ -52,6 +53,11 @@ input {
   width: 640px;
   min-height: 568px;
   padding: 45px 29px 0 29px;
+}
+.requisites-wrapper {
+  box-sizing: border-box;
+  padding: 45px 29px 0 29px;
+  width: 100%;
 }
 @media screen and (max-width: 1000px) {
   .requisites {
@@ -113,6 +119,7 @@ input {
 }
 .requisites__card-title {
   font: 22px OpenSansBold, sans-serif;
+  margin-top: 27px;
 }
 @media screen and (max-width: 1000px) {
   .requisites__card-title {
@@ -126,12 +133,32 @@ input {
   }
 }
 .requisites__card-form {
+  /* webkit */
+  /* Firefox 19+ */
+  /* Firefox 18- */
+  /* IE */
   height: 350px;
   color: #8494ab;
+  position: relative;
+}
+.requisites__card-form ::-webkit-input-placeholder {
+  color: #bec6cf;
+  opacity: 1;
+}
+.requisites__card-form ::-moz-placeholder {
+  color: #bec6cf;
+  opacity: 1;
+}
+.requisites__card-form :-moz-placeholder {
+  color: #bec6cf;
+  opacity: 1;
+}
+.requisites__card-form :-ms-input-placeholder {
+  color: #bec6cf;
+  opacity: 1;
 }
 .requisites__card-form-wrapper {
   display: flex;
-  justify-content: center;
   position: relative;
   width: 564px;
   height: 100%;
@@ -144,7 +171,7 @@ input {
 }
 @media screen and (max-width: 768px) {
   .requisites__card-form-wrapper {
-    min-width: 300px;
+    min-width: 280px;
   }
 }
 .requisites__card-form-side {
@@ -252,25 +279,64 @@ input {
 .requisites__card-form-side-cvc {
   box-sizing: border-box;
   font: 16px Arial, sans-serif;
-  margin-right: 15px;
-  margin-top: -3px;
+  margin-right: 17px;
+  margin-top: 16px;
   width: 137px;
   text-align: center;
 }
 .requisites__card-form-side-cvc-input {
-  width: 100%;
+  width: 98%;
+  margin-left: 2%;
   margin-top: 2px;
   height: 38px;
   border: 1px solid #e4e9ee;
 }
+.requisites__card-form-side-cvc-input_hidden {
+  margin-top: 0;
+}
 .requisites__card-form-side-cvc-first {
   width: 80px;
   margin-left: 40px;
+  margin-top: 0;
   display: none;
 }
 @media screen and (max-width: 600px) {
   .requisites__card-form-side-cvc-first {
     display: block;
+  }
+}
+.requisites__card-form-button {
+  cursor: pointer;
+  color: #fff;
+  font: 14px OpenSansBold;
+  width: 132px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-image: linear-gradient(to bottom, #005abe, #004da3);
+}
+.requisites__card-form-button:active {
+  background-image: linear-gradient(to bottom, #004da3, #005abe);
+}
+.requisites__card-form-button:focus {
+  outline: none;
+}
+.requisites__card-form-button-wrapper {
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 16px;
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .requisites__card-form-button-wrapper {
+    justify-content: center;
+    left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .requisites__card-form-button-wrapper {
+    transform: scale(0.8);
   }
 }
 .menu {
@@ -280,11 +346,6 @@ input {
   height: 375px;
 }
 @media screen and (max-width: 1000px) {
-  .menu {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 720px) {
   .menu {
     width: 100%;
   }
@@ -325,4 +386,10 @@ input {
 }
 .menu__list-item:last-child .menu__list-link {
   color: #808592;
+}
+.text-block {
+  width: 100%;
+  min-width: 320px;
+  height: 300px;
+  background-color: white;
 }

@@ -12,6 +12,7 @@ ul, a, p, body{
 
 body {
   background-color: #101114;
+  min-width: 320px;
 }
 
 input {
@@ -27,7 +28,7 @@ input {
   display: flex;
   justify-content: flex-end;
   max-width: 970px;
-  min-width: 320px;
+  min-width: 300px;
   &_centered {
     margin: 80px auto;
   }
@@ -52,6 +53,11 @@ input {
   width: 640px;
   min-height: 568px;
   padding: 45px 29px 0 29px;
+  &-wrapper {
+    box-sizing: border-box;
+    padding: 45px 29px 0 29px;
+    width: 100%;
+  }
   @media screen and (max-width: 1000px) {
     width: 90%;
   }
@@ -103,6 +109,7 @@ input {
     margin-top: 5px;
     &-title {
       font: 22px OpenSansBold, sans-serif;
+      margin-top: 27px;
       @media screen and (max-width: 1000px) {
         width: 100%;
         text-align: center;
@@ -113,11 +120,15 @@ input {
     }
     //Форма с данными карты
     &-form {
+      ::-webkit-input-placeholder {color:#bec6cf; opacity:1;}/* webkit */
+      ::-moz-placeholder          {color:#bec6cf; opacity:1;}/* Firefox 19+ */
+      :-moz-placeholder           {color:#bec6cf; opacity:1;}/* Firefox 18- */
+      :-ms-input-placeholder      {color:#bec6cf; opacity:1;}/* IE */
       height: 350px;
       color: @card-text;
+      position: relative;
       &-wrapper {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 564px;
         height: 100%;
@@ -126,7 +137,7 @@ input {
           margin: 0 auto;
         }
         @media screen and (max-width: 768px) {
-          min-width: 300px;
+          min-width: 280px;
         }
       }
       //Карточки
@@ -231,23 +242,62 @@ input {
         &-cvc {
           box-sizing: border-box;
           font: 16px Arial, sans-serif;
-          margin-right: 15px;
-          margin-top: -3px;
+          margin-right: 17px;
+          margin-top: 16px;
           width: 137px;
           text-align: center;
           &-input {
-            width: 100%;
+            width: 98%;
+            margin-left: 2%;
             margin-top: 2px;
             height: 38px;
             border: 1px solid @border-color;
+            &_hidden {
+              margin-top: 0;
+            }
           }
           &-first {
             width: 80px;
             margin-left: 40px;
+            margin-top: 0;
             display: none;
             @media screen and (max-width: 600px) {
               display: block;
             }
+          }
+        }
+      }
+    //  Кнопка
+      &-button {
+        //position: absolute;
+        cursor: pointer;
+        color: #fff;
+        font: 14px OpenSansBold;
+        //bottom: 10%;
+        //left: 3%;
+        width: 132px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        background-image: linear-gradient(to bottom, #005abe, #004da3);
+        &:active {
+          background-image: linear-gradient(to bottom, #004da3, #005abe);
+        }
+        &:focus {
+          outline: none;
+        }
+        &-wrapper {
+          display: flex;
+          position: absolute;
+          bottom: 10%;
+          left: 16px;
+          width: 100%;
+          @media screen and (max-width: 1000px) {
+            justify-content: center;
+            left: 0;
+          }
+          @media screen and (max-width: 768px) {
+            transform: scale(0.8);
           }
         }
       }
@@ -262,9 +312,6 @@ input {
   width: 320px;
   height: 375px;
   @media screen and (max-width: 1000px) {
-    width: 90%;
-  }
-  @media screen and (max-width: 720px) {
     width: 100%;
   }
   //Список
@@ -307,4 +354,11 @@ input {
 //Цвет кнопки "выход"
 .menu__list-item:last-child .menu__list-link {
   color: #808592;
+}
+
+.text-block {
+  width: 100%;
+  min-width: 320px;
+  height: 300px;
+  background-color: white;
 }
