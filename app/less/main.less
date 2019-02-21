@@ -1,8 +1,441 @@
-body {
-  background-color: #101114;
+@font-face {
+  font-family: "OpenSansBold";
+  src: url(../fonts/open-sans-bold.ttf) format("truetype"); /* все современные браузеры */
 }
 
+ul, a, p, body{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #101114;
+  min-width: 320px;
+}
+
+input {
+  font: 16px Arial, sans-serif;
+  text-align: center;
+}
+
+@border-color: #e4e9ee;
+@card-text: #8494ab;
+
+//Главный блок страницы
 .payments {
   display: flex;
-  max-width: 960px;
+  justify-content: flex-end;
+  max-width: 970px;
+  min-width: 300px;
+  &_centered {
+    margin: 80px auto;
+  }
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 10px;
+  }
+  @media screen and (max-width: 320px) {
+    margin: 0;
+  }
+}
+
+.main-content {
+  max-width: 640px;
+  min-width: 320px;
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+}
+
+//Блок с реквизитами карты
+.requisites {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #f7f8f8;
+
+  min-height: 568px;
+  padding: 45px 29px 0 29px;
+  &-wrapper {
+    box-sizing: border-box;
+    padding: 45px 29px 0 29px;
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 45px 10px 0 10px;
+    align-items: center;
+  }
+  //Информация о платеже
+  &__info {
+    display: flex;
+    flex-direction: column;
+    font: 16px Arial, sans-serif;
+    color: @card-text;
+    @media screen and (max-width: 1000px) {
+      width: 50%;
+      align-self: center;
+    }
+    @media screen and (max-width: 768px) {
+      width: 65%;
+    }
+    @media screen and (max-width: 450px) {
+      width: 85%;
+    }
+    //Номер счета, сумма платежа
+    &-element {
+      display: flex;
+      width: 49%;
+      justify-content: space-between;
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+      }
+    }
+    &-title {
+      margin-bottom: 21px;
+    }
+    &-number {
+      margin-bottom: 9px;
+
+    }
+    &-data {
+      min-width: 125px;
+      color: #373c43;
+    }
+  }
+  //Данные карты
+  &__card {
+    max-width: 100%;
+    margin-top: 5px;
+    &-title {
+      font: 22px OpenSansBold, sans-serif;
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        text-align: center;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+      }
+    }
+    //Форма с данными карты
+    &-form {
+      ::-webkit-input-placeholder {color:#bec6cf; opacity:1;}/* webkit */
+      ::-moz-placeholder          {color:#bec6cf; opacity:1;}/* Firefox 19+ */
+      :-moz-placeholder           {color:#bec6cf; opacity:1;}/* Firefox 18- */
+      :-ms-input-placeholder      {color:#bec6cf; opacity:1;}/* IE */
+      height: 350px;
+      color: @card-text;
+      position: relative;
+      &-wrapper {
+        display: flex;
+        position: relative;
+        width: 564px;
+        height: 100%;
+        @media screen and (max-width: 1000px) {
+          max-width: 100%;
+          margin: 0 auto;
+        }
+        @media screen and (max-width: 768px) {
+          min-width: 280px;
+        }
+      }
+      //Карточки
+      &-side {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 234px;
+        border: 1px solid @border-color;
+        border-radius: 10px;
+        background-color: #f7f8f8;
+        padding-left: 15px;
+        @media screen and (max-width: 450px) {
+          transform-origin: center;
+          transform: scale(0.8);
+        }
+        //Сторона с номером карты
+        &-first {
+          z-index: 15;
+          position: relative;
+          @media screen and (max-width: 620px) {
+            margin: 0 auto;
+          }
+          //Полоса с номером карты
+          &-number {
+            display: flex;
+            justify-content: space-between;
+            width: 86%;
+            margin-top: 5px;
+            height: 42px;
+            @media screen and (max-width: 450px) {
+              width: 95%;
+            }
+            &-input {
+              box-sizing: border-box;
+              padding: 0 5px;
+              width: 22.8%;
+              border: 1px solid @border-color;
+              font: 20px Arial,sans-serif;
+            }
+          }
+          //Срок действия карты
+          &-validity {
+            margin-top: 5px;
+            height: 42px;
+            display: flex;
+            &-input {
+              height: 100%;
+              box-sizing: border-box;
+              padding: 4px 0 0 15px;
+              border: 1px solid @border-color;
+              font: 20px Arial,sans-serif;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+            }
+            &-month {
+              width: 70px;
+            }
+            &-year {
+              width: 86px;
+            }
+            &-container {
+              box-sizing: border-box;
+              position: relative;
+              margin-right: 9px;
+              &:before {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 12px;
+                right: 12px;
+                border: 1px solid #c9d0d7;
+                border-left:none;
+                border-top:none;
+                transform: rotate(45deg);
+              }
+            }
+          }
+          //Владелец карты
+          &-owner {
+            box-sizing: border-box;
+            text-align: left;
+            padding: 0 12px;
+            margin-top: 12px;
+            height: 42px;
+            width: 96%;
+            border: 1px solid @border-color;
+          }
+        }
+        &-title {
+          font: 16px Arial, sans-serif;
+          color: @card-text;
+          background-color: #f7f8f8;
+          margin-top: 20px;
+          &_position {
+            margin-top: 15px;
+          }
+        }
+        &-second {
+          width: 370px;
+          align-items: flex-end;
+          z-index: 10;
+          position: absolute;
+          padding: 0;
+          top: 20px;
+          right: 0;
+          @media screen and (max-width: 620px) {
+            display: none;
+          }
+          //Серая полоса
+          &-line {
+            width: 100%;
+            height: 42px;
+            margin-top: 25px;
+            background-color: @border-color;
+          }
+        }
+        &-cvc {
+          z-index: 30;
+          position: absolute;
+          top: 87px;
+          right: -213px;
+          box-sizing: border-box;
+          font: 16px Arial, sans-serif;
+          margin-right: 17px;
+          margin-top: 16px;
+          width: 137px;
+          text-align: center;
+          @media screen and (max-width: 700px) {
+            right: -180px;
+          }
+          @media screen and (max-width: 620px) {
+            right: 0px;
+          }
+          @media screen and (max-width: 450px) {
+            right: -20px;
+          }
+          &-tip {
+            content: "?";
+            box-sizing: border-box;
+            padding-top: 2px;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: 5px;
+            top: 50.5%;
+            color: #c7ced6;
+            border: 1px solid #c7ced6;
+            border-radius: 50%;
+            cursor: pointer;
+            @media screen and (max-width: 450px) {
+              top: 47%;
+              right: 28px;
+              transform: scale(0.8);
+            }
+          }
+          &-input {
+            width: 98%;
+            margin-left: 2%;
+            margin-top: 2px;
+            height: 38px;
+            border: 1px solid @border-color;
+            @media screen and (max-width: 450px) {
+              width: 60%;
+            }
+          }
+          &-first {
+            width: 80px;
+            margin-left: 40px;
+            margin-top: 0;
+            display: none;
+            @media screen and (max-width: 600px) {
+              display: block;
+            }
+          }
+        }
+      }
+    //  Кнопка
+      &-button {
+        //position: absolute;
+        cursor: pointer;
+        color: #fff;
+        font: 14px OpenSansBold;
+        //bottom: 10%;
+        //left: 3%;
+        width: 132px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        background-image: linear-gradient(to bottom, #005abe, #004da3);
+        &:active {
+          background-image: linear-gradient(to bottom, #004da3, #005abe);
+        }
+        &:focus {
+          outline: none;
+        }
+        &-wrapper {
+          display: flex;
+          position: absolute;
+          bottom: 10%;
+          left: 16px;
+          width: 100%;
+          @media screen and (max-width: 1000px) {
+            justify-content: center;
+            left: 0;
+          }
+          @media screen and (max-width: 768px) {
+            transform: scale(0.8);
+          }
+        }
+      }
+      //Общий класс для input
+      &-input {
+        font: 16px Arial, sans-serif;
+      }
+    }
+  }
+}
+
+//Меню навигации
+.menu {
+  font: 18px OpenSansBold, sans-serif;
+  font-weight: bold;
+  width: 320px;
+  height: 375px;
+  max-width: 640px;
+  min-width: 320px;
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 320px) {
+    width: 100%;
+  }
+  //Список
+  &__list {
+    height: 100%;
+    //Элемент списка
+    &-item {
+      height: 20%;
+    }
+    //Ссылка списка
+    &-link {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding-left: 28px;
+      padding-bottom: 2px;
+      color: #fff;
+      background-color: #191c24;
+      border-top: 1px solid #20232b;
+      @media screen and (max-width: 1000px) {
+        padding: 0;
+        justify-content: center;
+      }
+      //Активная ссылка списка
+      &_active {
+        color: #808592;
+      }
+      &_active {
+        background-color: #2a2d37;
+        &:after {
+          content: " (активная)";
+          white-space: pre;
+        }
+      }
+    }
+  }
+}
+//Цвет кнопки "выход"
+.menu__list-item:last-child .menu__list-link {
+  color: #808592;
+}
+
+//Блок с текстом
+.text-block {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 35px 24px 30px;
+  min-width: 320px;
+  font: 12px Arial, sans-serif;
+  color: #7f8591;
+  background-color: #373c43;
+  &__element {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    word-break: keep-all;
+    word-wrap: break-spaces;
+    @media screen and (max-width: 768px) {
+      text-align: justify;
+    }
+  }
 }
