@@ -197,9 +197,8 @@ input {
   z-index: 15;
   position: relative;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   .requisites__card-form-side-first {
-    position: inherit;
     margin: 0 auto;
   }
 }
@@ -267,7 +266,7 @@ input {
   top: 20px;
   right: 0;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 620px) {
   .requisites__card-form-side-second {
     display: none;
   }
@@ -279,12 +278,45 @@ input {
   background-color: #e4e9ee;
 }
 .requisites__card-form-side-cvc {
+  z-index: 30;
+  position: absolute;
+  top: 87px;
+  right: -213px;
   box-sizing: border-box;
   font: 16px Arial, sans-serif;
   margin-right: 17px;
   margin-top: 16px;
   width: 137px;
   text-align: center;
+}
+@media screen and (max-width: 700px) {
+  .requisites__card-form-side-cvc {
+    right: -180px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .requisites__card-form-side-cvc {
+    right: 0px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .requisites__card-form-side-cvc {
+    right: -20px;
+  }
+}
+.requisites__card-form-side-cvc-tip {
+  content: "?";
+  box-sizing: border-box;
+  padding-top: 2px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 5px;
+  top: 50.5%;
+  color: #c7ced6;
+  border: 1px solid #c7ced6;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .requisites__card-form-side-cvc-input {
   width: 98%;
@@ -293,8 +325,10 @@ input {
   height: 38px;
   border: 1px solid #e4e9ee;
 }
-.requisites__card-form-side-cvc-input_hidden {
-  margin-top: 0;
+@media screen and (max-width: 400px) {
+  .requisites__card-form-side-cvc-input {
+    width: 60%;
+  }
 }
 .requisites__card-form-side-cvc-first {
   width: 80px;
@@ -341,16 +375,25 @@ input {
     transform: scale(0.8);
   }
 }
+.requisites__card-form-input {
+  font: 16px Arial, sans-serif;
+}
 .menu {
   font: 18px OpenSansBold, sans-serif;
   font-weight: bold;
   width: 320px;
   height: 375px;
   max-width: 640px;
+  min-width: 320px;
 }
 @media screen and (max-width: 1000px) {
   .menu {
     width: 90%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .menu {
+    width: 100%;
   }
 }
 .menu__list {

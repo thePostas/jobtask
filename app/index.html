@@ -39,31 +39,29 @@
                                 <label for="number-field-1" class="requisites__card-form-side-title">Номер карты</label>
                                 <!--Поле с номером карты-->
                                 <div class="requisites__card-form-side-first-number">
-                                    <input type="text" id="number-field-1" name="number-field-1" class="requisites__card-form-side-first-number-input">
-                                    <input type="text" id="number-field-2" name="number-field-2" class="requisites__card-form-side-first-number-input">
-                                    <input type="text" id="number-field-3" name="number-field-3" class="requisites__card-form-side-first-number-input">
-                                    <input type="text" id="number-field-4" name="number-field-4" class="requisites__card-form-side-first-number-input">
+                                    <input tabindex="1" type="text" pattern="[0-9]{4}" oninvalid="setCustomValidity('Поле должно содержать 4 цифры от 0 до 9')" oninput="setCustomValidity('')" maxlength="4" id="number-field-1" name="number-field-1" class="requisites__card-form-input requisites__card-form-side-first-number-input" required>
+                                    <input tabindex="2" type="text" pattern="[0-9]{4}" oninvalid="setCustomValidity('Поле должно содержать 4 цифры от 0 до 9')" oninput="setCustomValidity('')" maxlength="4" id="number-field-2" name="number-field-2" class="requisites__card-form-input requisites__card-form-side-first-number-input" required>
+                                    <input tabindex="3" type="text" pattern="[0-9]{4}" oninvalid="setCustomValidity('Поле должно содержать 4 цифры от 0 до 9')" oninput="setCustomValidity('')" maxlength="4" id="number-field-3" name="number-field-3" class="requisites__card-form-input requisites__card-form-side-first-number-input" required>
+                                    <input tabindex="4" type="text" pattern="[0-9]{4}" oninvalid="setCustomValidity('Поле должно содержать 4 цифры от 0 до 9')" oninput="setCustomValidity('')" maxlength="4" id="number-field-4" name="number-field-4" class="requisites__card-form-input requisites__card-form-side-first-number-input" required>
                                 </div>
                                 <!--Срок действия карты-->
                                 <p class="requisites__card-form-side-title requisites__card-form-side-title_position">Срок действия</p>
                                 <div class="requisites__card-form-side-first-validity">
-                                    <input type="text" id="month" name="month" min="01" max="12" class="requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-month">
-                                    <input type="text" id="year" name="year" class="requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-year">
-                                    <!--CVC код на лицевой стороне карты при низких разрешениях экрана-->
-                                    <div class="requisites__card-form-side-cvc requisites__card-form-side-cvc-first">
-                                        <input type="text" id="cvc-1" name="cvc" class="requisites__card-form-side-cvc-input requisites__card-form-side-cvc-input_hidden" placeholder="CVV2/CVC2">
-                                    </div>
+                                    <input tabindex="5" type="text" id="month" name="month" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-month" required>
+                                    <input tabindex="6" type="text" id="year" name="year" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-year"    required>
                                 </div>
                                 <!--Владелец карты-->
-                                <input type="text" class="requisites__card-form-side-first-owner" placeholder="Держатель карты">
+                                <input tabindex="8" type="text" pattern="[A-Z]{4,20}" oninvalid="setCustomValidity('Напишите имя владельца карты латинскими заглавными буквами(минимум 4 буквы)')" oninput="setCustomValidity('')" class="requisites__card-form-input requisites__card-form-side-first-owner" placeholder="Держатель карты">
+                                <!--CVC-->
+                                <div class="requisites__card-form-side-cvc requisites__card-form-side-cvc">
+                                    <span class="requisites__card-form-side-cvc-tip" title="3 цифры на обратной стороне карты">?</span>
+                                    <label for="cvc" class="requisites__card-form-side-title">Код CVV2 / CVC2</label>
+                                    <input tabindex="7" type="text" pattern="[0-9]{3}" maxlength="3" oninvalid="setCustomValidity('Поле должно содержать 3 цифры от 0 до 9')" oninput="setCustomValidity('')" id="cvc" name="cvc" class="requisites__card-form-input requisites__card-form-side-cvc-input" required>
+                                </div>
                             </div>
                             <!--Вторая сторона карты-->
                             <div class="requisites__card-form-side requisites__card-form-side-second">
                                 <span class="requisites__card-form-side-second-line"></span>
-                                <div class="requisites__card-form-side-cvc requisites__card-form-side-cvc-second">
-                                    <label for="cvc" class="requisites__card-form-side-title">Код CVV2 / CVC2</label>
-                                    <input type="text" id="cvc" name="cvc-2" class="requisites__card-form-side-cvc-input">
-                                </div>
                             </div>
                         </div>
                         <!--Кнопка-->
