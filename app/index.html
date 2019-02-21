@@ -48,32 +48,32 @@
                                 <p class="requisites__card-form-side-title requisites__card-form-side-title_position">Срок действия</p>
                                 <div class="requisites__card-form-side-first-validity">
                                     <div class="requisites__card-form-side-first-validity-container">
-                                        <select tabindex="5" type="text" id="month" name="month" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-month" required>
-                                            <option class="requisites__card-form-side-first-validity-month-option"></option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">01</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">02</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">03</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">04</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">05</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">06</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">07</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">08</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">09</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">10</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">11</option>
-                                            <option class="requisites__card-form-side-first-validity-month-option">12</option>
+                                        <select tabindex="5" oninvalid="setCustomValidity('Укажите месяц')" oninput="setCustomValidity('')" id="month" name="month" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-month" required>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="">XX</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="01">01</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="02">02</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="03">03</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="04">04</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="05">05</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="06">06</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="07">07</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="08">08</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="09">09</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="10">10</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="11">11</option>
+                                            <option class="requisites__card-form-side-first-validity-month-option" value="12">12</option>
                                         </select>
                                     </div>
                                     <div class="requisites__card-form-side-first-validity-container">
-                                        <select tabindex="6" type="text" id="year" name="year" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-year" required>
-                                            <option class="requisites__card-form-side-first-validity-year-option"></option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2019</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2020</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2021</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2022</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2023</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2024</option>
-                                            <option class="requisites__card-form-side-first-validity-year-option">2025</option>
+                                        <select tabindex="6" oninvalid="setCustomValidity('Укажите год')" oninput="setCustomValidity('')" id="year" name="year" class="requisites__card-form-input requisites__card-form-side-first-validity-input requisites__card-form-side-first-validity-year" required>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="">XXXX</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2019">2019</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2020">2020</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2021">2021</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2022">2022</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2023">2023</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2024">2024</option>
+                                            <option class="requisites__card-form-side-first-validity-year-option" value="2025">2025</option>
                                         </select>
                                     </div>
                                 </div>
@@ -105,6 +105,6 @@
             </section>
         </section>
     </section>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<!--<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
 </body>
 </html>
