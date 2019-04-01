@@ -29,7 +29,7 @@ var allFormInputs = form.getElementsByClassName('requisites__card-form-input');
 
 function clearErrors() {
     for (var i = 0; i < allFormInputs.length; i++) {
-        allFormInputs[i].style.borderColor = '#e4e9ee'; 
+        allFormInputs[i].style.borderColor = '#e4e9ee';
     }
 }
 
@@ -41,11 +41,11 @@ form.addEventListener('submit', function (event) {
 for (let i = 0; i < allFormInputs.length; i++) {
     allFormInputs[i].addEventListener('input', function () {
         if (!allFormInputs[i].checkValidity()) {
-            allFormInputs[i].classList.remove('requisites__card-form-input-correct')
-            allFormInputs[i].classList.add('requisites__card-form-input-error')
+            allFormInputs[i].classList.remove('requisites__card-form-input-correct');
+            allFormInputs[i].classList.add('requisites__card-form-input-error');
         } else {
-            allFormInputs[i].classList.remove('requisites__card-form-input-error')
-            allFormInputs[i].classList.add('requisites__card-form-input-correct')
+            allFormInputs[i].classList.remove('requisites__card-form-input-error');
+            allFormInputs[i].classList.add('requisites__card-form-input-correct');
         }
     })
 }
