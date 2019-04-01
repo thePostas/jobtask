@@ -405,6 +405,14 @@ input {
 .requisites__card-form-input {
   font: 16px Arial, sans-serif;
 }
+.requisites__card-form-input-correct {
+  outline: 1px solid green;
+  border: 1px solid green;
+}
+.requisites__card-form-input-error {
+  outline: 1px solid red;
+  border: 1px solid red;
+}
 .menu {
   font: 18px OpenSansBold, sans-serif;
   font-weight: bold;
